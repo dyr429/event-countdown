@@ -20,9 +20,12 @@ const renderTime = (dimension, time) => {
 };
 
 export default function Counter(props) {
-    const {daysDuration,remainingTime} = props
+    const {daysDuration,remainingTime,name} = props
     return (
         <div className="App">
+
+            <h2>{name} : </h2>
+
             <CountdownCircleTimer
                 {...timerProps}
                 colors={[["#7E2E84"]]}
