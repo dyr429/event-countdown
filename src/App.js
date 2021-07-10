@@ -14,11 +14,14 @@ export default function App() {
         {data.map((conference,index)=>{
           const remainingTime = conference.endTime - startTime;
           const days = Math.ceil(remainingTime / TimeUtils.daySeconds);
+          const weeks = (days/7).toFixed(1);
           const daysDuration = days * TimeUtils.daySeconds;
-
+          const conferenceTime = new Date(conference.endTime*1000)
           return (<div>
             <Counter daysDuration={daysDuration}
                      remainingTime={remainingTime}
+                     date = {conferenceTime}
+                     weeks = {weeks}
                      name={conference.name}></Counter>
           </div>)
         })}

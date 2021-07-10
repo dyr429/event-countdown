@@ -20,11 +20,12 @@ const renderTime = (dimension, time) => {
 };
 
 export default function Counter(props) {
-    const {daysDuration,remainingTime,name} = props
+    const {daysDuration,remainingTime,name,date,weeks} = props
     return (
         <div className="App">
 
-            <h2>{name} : </h2>
+            <h2>{name} : {date.toLocaleString()} </h2>
+            <h2>{weeks} weeks left</h2>
 
             <CountdownCircleTimer
                 {...timerProps}
